@@ -3,3 +3,7 @@
     grid-template-columns: repeat(3,1fr);
     gap: 8px;
 }
+.flags_container img{
+    width: 100px;
+    height: 90px;
+}
