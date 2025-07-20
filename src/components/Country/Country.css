@@ -5,3 +5,11 @@
     border-radius: 12px;
     
 }
+.visitedStyle{
+    background-color: rgb(6, 6, 83);
+    color: white;
+}
+.non_VisitedStyle{
+    background-color: rgb(139, 190, 244);
+        color: rgb(0, 0, 0);
+}
