@@ -14,11 +14,14 @@ const Countries = () => {
     }, [])
     
     // For Mark Visit State
-    const [VisitedCountries, setVisitedCountries] = useState([]);
+    const [visitedCountries, setVisitedCountries] = useState([]);
 
-    // For Mark HandleEvent
+    // For Visited Country HandleEvent
     const handleVisitedCountry = (country) => {
-        console.log(country);
+
+        // Add element to existing array
+        const newVisitedCountries = [...visitedCountries, country]
+        setVisitedCountries(newVisitedCountries)
     }
 
     return (
@@ -27,8 +30,12 @@ const Countries = () => {
             <hr />
             <hr />
             <div>
-                <h3>Visited Country</h3>
+                <h3>Visited Country :{ visitedCountries.length}</h3>
                 <ul>
+                    { 
+                        visitedCountries.map((country) => <li key={country.cca3}>{ country.name.common}</li>)
+                    }
+
 
                 </ul>
             </div>
@@ -39,7 +46,7 @@ const Countries = () => {
                     countries.map((country) => <Country
                         key={country.cca3}
                         country={country}
-                        setVisitedCountries={setVisitedCountries}
+                
                         handleVisitedCountry={handleVisitedCountry}
                     ></Country>)
                 }
